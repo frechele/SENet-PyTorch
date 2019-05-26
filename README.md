@@ -6,6 +6,21 @@ Squeeze and Excitation network implementation with PyTorch.
 * PyTorch 1.1.0
 * torchvision 0.3.0
 
+# MNIST
+* Network architecture
+	* Blocks : 10
+	* Filters : 128
+* Hyper-parameters
+	* Optimizer : NAG
+	* Momentum : 0.9
+	* Weight decay : 1e-4
+	* Learning rate : 1e-1 (1 to 2 epochs)
+* Result (After 2 epochs)
+	* Train Accuracy : 98.54%
+	* Test Accuracy : 98.90%
+  
+[Download pretrained-model](https://github.com/JYPark09/SENet-PyTorch/releases/tag/MNIST)
+
 # CIFAR-10  
 * Network architecture
 	* Blocks : 10
