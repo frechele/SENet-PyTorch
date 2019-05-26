@@ -18,3 +18,5 @@ Squeeze and Excitation network implementation with PyTorch.
 * Result (After 31 epochs)
 	* Train Accuracy : 93.1040%
 	* Test Accuracy : 86.9700%
+  
+[Download pretrained-model](https://github.com/JYPark09/SENet-PyTorch/releases/tag/CIFAR-10)
