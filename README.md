@@ -8,6 +8,9 @@ Squeeze and Excitation network implementation with PyTorch.
 * PyTorch 1.1.0
 * torchvision 0.3.0
 
+## Additional Feature
+In original paper, SE block just scale. But, I added bias to SE block. It works better than original architecture.
+
 ## Quick Start
 First, clone the code:  
 ```
