@@ -43,5 +43,19 @@ net = Network(1, 128, 10, 10).cuda()
 net.load_state_dict(torch.load(<CHECKPOINT_FILE_PATH>))
 ```
 
+## Issue
+### I have no gpus, but I want to use pretrained model.  
+* You can load pretrained model by adding map_location at torch.load.  
+
+(example for CIFAR-10)
+```
+net = Network(3, 128, 10, 10)
+net.load_state_dict(torch.load(<CHECKPOINT_FILE_PATH>, map_location='cpu'))
+```
+
+### CUDA Memory Allocation Fail  
+* reduce BATCH_SIZE
+* make smaller network architecture.
+
 ## Contact
 You can contact me via e-mail (jyp10987 at gmail.com) or github issue.
