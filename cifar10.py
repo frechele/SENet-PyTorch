@@ -11,9 +11,9 @@ from network import Network
 
 import time
 
-EPOCHS = 20
+EPOCHS = 40
 BATCH_SIZE = 128
-LEARNING_RATE = 1e-3
+LEARNING_RATE = 1e-1
 WEIGHT_DECAY = 1e-4
 
 def main():

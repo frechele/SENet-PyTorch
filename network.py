@@ -10,15 +10,16 @@ class SEBlock(nn.Module):
         self.fc = nn.Sequential(
             nn.Conv2d(channels, channels // reduction, 1, bias=False),
             nn.ReLU(),
-            nn.Conv2d(channels // reduction, channels, 1, bias=False),
-            nn.Sigmoid()
+            nn.Conv2d(channels // reduction, channels * 2, 1, bias=False),
         )
 
     def forward(self, x):
         w = F.adaptive_avg_pool2d(x, 1) # Squeeze
-        w = self.fc(x) # Excitation
+        w = self.fc(x)
+        w, b = w.split(w.data.size(1) // 2, dim=1) # Excitation
+        w = torch.sigmoid(w)
 
-        return x * w # Scale
+        return x * w + b # Scale and add bias
 
 # Residual Block with SEBlock
 class ResBlock(nn.Module):
